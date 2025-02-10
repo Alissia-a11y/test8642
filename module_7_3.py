@@ -1,5 +1,5 @@
 class WordsFinder:
-    # таблица преобразования для str.translate
+
     trans_table = str.maketrans('.!,:;=?', '       ')
 
     def __init__(self, *file_names: str):
@@ -36,7 +36,7 @@ class WordsFinder:
                     found = True
                     break
             if found:
-                found_words[file_name] = i + 1  # позиция начинается с 1
+                found_words[file_name] = i + 1  
         return found_words
 
     def count(self, search_word: str):
@@ -53,15 +53,6 @@ class WordsFinder:
 
 if __name__ == '__main__':
     finder2 = WordsFinder('test_file.txt')
-    print(finder2.get_all_words())  # Все слова
-    print(finder2.find('TEXT'))  # 3 слово по счёту
-    print(finder2.count('teXT'))  # 4 слова teXT в тексте всего
-
-    # print()
-    # print('the')
-    # finder = WordsFinder("Mother Goose - Monday’s Child.txt",
-    #                      'Rudyard Kipling - If.txt',
-    #                      'Walt Whitman - O Captain! My Captain!.txt')
-    # print(finder.get_all_words())
-    # print(finder.find('the'))
-    # print(finder.count('the'))
+    print(finder2.get_all_words())  
+    print(finder2.find('TEXT'))  
+    print(finder2.count('teXT'))  
